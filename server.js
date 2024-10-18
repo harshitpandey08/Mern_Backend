@@ -11,6 +11,10 @@ dotenv.config();
 app.use(express.json()); // To parse JSON requests
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.send('Hello');
+});
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connected to MongoDB"))
